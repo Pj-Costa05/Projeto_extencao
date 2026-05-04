@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    background-color: #1a0142 !important;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+main {
+    width: 300px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.campo {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.botoes {
+    margin-top: 15px;
+}
+
+button {
+    background-color: #1d1a6d;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d1a6d;
+}
+
+a.botao {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: gray;
+    color: white;
+    text-decoration: none;
+}
+a.botao.usuarios {
+    background: #1d1a6d;
+}
+a.botao.carros {
+    background: #c90101;
+}
+a.botao.voltar {
+    background: blue;
+}
