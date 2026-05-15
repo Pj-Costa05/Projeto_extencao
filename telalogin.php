@@ -14,13 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
-    $usuario = $stmt->fetch();
+     $usuario = $stmt->fetch();
 
-    if ($usuario && $senha === $usuario['senha']) {
-
-        $_SESSION['usuario'] = $usuario['email'];
-        $_SESSION['tipo'] = $usuario['tipo'];
-
+    if ($usuario && password_verify($senha, $usuario['senha'])) {
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        $_SESSION['usuario_tipo'] = $usuario['tipo'];
         header("Location: home.php");
         exit;
         }  

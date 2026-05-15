@@ -2,6 +2,11 @@
 <main>
 <?php
 require_once 'conexao.php';
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: telalogin.php");
+    exit;
+}
 
 echo "Login Realizado!<br><br>Bem-vindo";
 echo '<a class="botao carro" href="show_user.php">Consultar usuarios</a>';

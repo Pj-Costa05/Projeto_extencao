@@ -1,10 +1,16 @@
 <?php
 require_once 'conexao.php';
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: telalogin.php");
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
+        $senhaHash = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $stmt = $pdo->prepare("INSERT INTO usuarios (nome, usuario, email, senha) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$_POST['nome'], $_POST['usuario'], $_POST['email'], $_POST['senha']]);
+        $stmt->execute([$_POST['nome'], $_POST['usuario'], $_POST['email'], $senhaHash]);
         header("Location: show_user.php?msg=sucesso");
         exit;
     } catch (Exception $e) {

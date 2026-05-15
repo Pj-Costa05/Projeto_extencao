@@ -20,6 +20,6 @@
     <a href="show_user.php">Usuários Cadastrados</a>
     <a href="cad_car.php">Novo Carro</a>
     <a href="show_car.php">Carros Cadastrados</a>
-    <a href="telalogin.php">Sair</a>
+    <a href="logout.php">Sair</a>
 </nav>
 <div class="container">

@@ -1,5 +1,10 @@
 <?php
 require_once 'conexao.php';
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: telalogin.php");
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE usuarios SET nome=?, usuario=?, email=?, senha=? WHERE id=?");

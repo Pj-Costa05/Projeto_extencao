@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; $db = 'unicar'; $user = 'root'; $pass= '';
+$host = 'mysql-db'; $db = 'unicar'; $user = 'root'; $pass= 'root';
 $dsn ="mysql:host=$host;dbname=$db;charset=utf8mb4";
 try {
     $pdo = new PDO($dsn, $user, $pass, [
@@ -9,4 +9,4 @@ try {
     ]);
 } catch (PDOException $e) {
     die("Erro de conexão: " . $e->getMessage());
-}
+}   

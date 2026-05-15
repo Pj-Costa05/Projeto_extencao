@@ -1,5 +1,10 @@
 <?php
 require_once 'conexao.php';
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: telalogin.php");
+    exit;
+}
 $usuarios = $pdo->query("SELECT * FROM carros ORDER BY nome")->fetchAll();
 
 // Sistema de Mensagens
